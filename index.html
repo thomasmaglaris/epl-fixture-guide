@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>EPL Fixture Guide</title>
+    <link rel="stylesheet" type="text/css" href="highlights/highlights.css">
+    <link rel="stylesheet" href="./style.css" />
 </head>
+
 <body>
     <h1>English Premier League</h1>
     <h1>Fixture Guide</h1>
@@ -34,7 +38,7 @@
             <input type="Submit" id="Submit">
         </select>
 
-        <section id = "upcoming-fixture">
+        <section id = "upcomingFixture">
             <h2>Upcoming Fixture</h2>
         </section>
 
@@ -42,8 +46,27 @@
             <h2>Weather</h2>
         </section>
 
-        <section id="Table">
+        <section id="table">
             <h2>Table</h2>
         </section>
+
+
+    <!-- Trigger/Open The Modal -->
+    <button id="myBtn">View Highlights</button>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Insert Highlight Video Here</p>
+        </div>
+
+    </div>
+
+    <script src="highlights/highlights.js"></script>
+
 </body>
+
 </html>
