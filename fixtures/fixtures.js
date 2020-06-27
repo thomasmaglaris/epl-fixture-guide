@@ -18,17 +18,12 @@ $("#Submit").on("click", function() {
         
         // console.log(fixtures);
         
-        // Hacky way to get the date of the fixture. Will improve this later
-        console.log(fixtures.matches[0].utcDate);
+        // Gets fixture date in UTC and changes it to user's local time
         var rawDate = fixtures.matches[0].utcDate;
         rawDate.toString();
-        // 2020-07-02T19:15:00Z // Original date format, need to conver to 2020-07-02 19:15:00 UTC
-        rawDate2 = rawDate.replace("T", " ");
-        rawDate3 = rawDate2.replace("Z", " UTC");
-        console.log("rawDate2 " + rawDate2);
-        console.log("rawDate3 " + rawDate3);
-        var date = new Date(rawDate3);
-        console.log(date.toString());
+        date = rawDate.replace("T", " ").replace("Z", " UTC");
+        var fixtureDate = new Date(date);
+        console.log(fixtureDate.toString());
     });
 });
     
