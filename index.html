@@ -5,12 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-
     <title>EPL Fixture Guide</title>
     <link rel="stylesheet" type="text/css" href="highlights/highlights.css">
     <link rel="stylesheet" href="./style.css" />
-
-
 
 </head>
 
@@ -19,8 +16,7 @@
     <h1>Fixture Guide</h1>
     <form action="drop-down"></form>
 
-
-        <select>
+        <select id="dropdown"> <!-- CR: Added id for dropdown. Using this in fixtures.js to grab the Team ID value-->
             <option class="eplTeam" value="57">Arsenal</option>
             <option class="eplTeam" value="58">Aston Villa</option>
             <option class="eplTeam" value="1044">Bournemouth</option>
@@ -33,7 +29,7 @@
             <option class="eplTeam" value="64">Liverpool</option>
             <option class="eplTeam" value="65">Manchester City</option>
             <option class="eplTeam" value="66">Manchester United</option>
-            <option class="eplTeam"value="67">Newcastle United</option>
+            <option class="eplTeam" value="67">Newcastle United</option>
             <option class="eplTeam" value="68">Norwich City</option>
             <option class="eplTeam" value="356">Sheffield United</option>
             <option class="eplTeam" value="340">Southampton</option>
@@ -45,7 +41,7 @@
             <input type="Submit" id="Submit">
         </select>
 
-        <section id = "upcomingFixture">
+        <section id="upcomingFixture">
             <h2>Upcoming Fixture</h2>
         </section>
 
@@ -57,9 +53,8 @@
             <h2>Table</h2>
         </section>
 
-
-
-    <section id="upcomingFixture">
+    <!-- CR: We might not need this. We could dynamically add ALL the fixtures into the above section instead of having multiple -->
+    <section id="upcomingFixture2"> <!-- CR: Renamed ID to avoid duplicating text on screen -->
         <h2>Upcoming Fixture</h2>
     </section>
 

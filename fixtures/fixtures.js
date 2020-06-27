@@ -5,7 +5,7 @@ const APIKEY = "31c88a22681c400c82675891090ba891"; // Football data API Key
 var teamID = "";
 
 $("#Submit").on("click", function() {
-    var teamID = $(".eplTeam").val();
+    var teamID = $("#dropdown").val();
 
     var queryURLByID = "https://cors-anywhere.herokuapp.com/https://api.football-data.org/v2/teams/" + teamID + "/matches?status=SCHEDULED"; // SCHEDULED MATCHES FROM TEAM ID
     // var queryURLTeams = "https://cors-anywhere.herokuapp.com/https://api.football-data.org/v2/competitions/PL/teams"; // GET TEAMS
@@ -16,19 +16,29 @@ $("#Submit").on("click", function() {
         type: 'GET',
     }).done(function(fixtures) {
         
+        // Clears last fixtures on new search
+        $("#upcomingFixture").empty();
+
         // console.log(fixtures);
         
-        // Hacky way to get the date of the fixture. Will improve this later
-        console.log(fixtures.matches[0].utcDate);
+        // Gets home & away team
+        homeTeam = $("<h4>");
+        homeTeam.text("Home: " + fixtures.matches[0].homeTeam.name);
+        awayTeam = $("<h4>");
+        awayTeam.text("Away: " + fixtures.matches[0].awayTeam.name);
+        
+        // Gets fixture date in UTC and changes it to user's local time
         var rawDate = fixtures.matches[0].utcDate;
         rawDate.toString();
-        // 2020-07-02T19:15:00Z // Original date format, need to conver to 2020-07-02 19:15:00 UTC
-        rawDate2 = rawDate.replace("T", " ");
-        rawDate3 = rawDate2.replace("Z", " UTC");
-        console.log("rawDate2 " + rawDate2);
-        console.log("rawDate3 " + rawDate3);
-        var date = new Date(rawDate3);
-        console.log(date.toString());
+        date = rawDate.replace("T", " ").replace("Z", " UTC");
+        var fixtureDate = new Date(date);
+        matchDate = $("<h6>");
+        matchDate.text("Date: " + fixtureDate.toString()); // TODO: Format this date better
+
+        teamFixtures = $("<div>");
+        teamFixtures.append(homeTeam, awayTeam, matchDate);
+        $("#upcomingFixture").append(teamFixtures);
+
     });
 });
     
