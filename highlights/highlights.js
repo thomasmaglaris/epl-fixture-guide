@@ -24,10 +24,21 @@ window.onclick = function (event) {
   }
 }
 
-  (function (d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s);
-    js.id = id; js.src = 'https://www.scorebat.com/embed/embed.js?v=arrv';
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'scorebat-jssdk'));
+  // (function (d, s, id) {
+  //   var js, fjs = d.getElementsByTagName(s)[0];
+  //   if (d.getElementById(id)) return;
+  //   js = d.createElement(s);
+  //   js.id = id; js.src = 'https://www.scorebat.com/embed/embed.js?v=arrv';
+  //   fjs.parentNode.insertBefore(js, fjs);
+  // }(document, 'script', 'scorebat-jssdk'));
+
+// URL for scorebat video API
+var queryURL = "https://www.scorebat.com/video-api/v1/";
+
+// Get data from API using URL
+$.ajax({
+  url: queryURL,
+  method: "GET"
+}).then(function (result) {
+  console.log(result);
+});
