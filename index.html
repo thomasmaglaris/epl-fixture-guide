@@ -4,15 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
     <title>EPL Fixture Guide</title>
     <link rel="stylesheet" type="text/css" href="highlights/highlights.css">
     <link rel="stylesheet" href="./style.css" />
+
+
+
 </head>
 
 <body>
     <h1>English Premier League</h1>
     <h1>Fixture Guide</h1>
     <form action="drop-down"></form>
+
         <select>
             <option value="57">Arsenal</option>
             <option value="58">Aston Villa</option>
@@ -51,6 +57,21 @@
         </section>
 
 
+
+    <section id="upcomingFixture">
+        <h2>Upcoming Fixture</h2>
+    </section>
+
+    <section id="weather">
+        <h2>Weather</h2>
+    </section>
+
+    <section id="table">
+        <h2>Table</h2>
+    </section>
+
+
+
     <!-- Trigger/Open The Modal -->
     <button id="myBtn">View Highlights</button>
 
@@ -60,7 +81,12 @@
         <!-- Modal content -->
         <div class="modal-content">
             <span class="close">&times;</span>
-            <p>Insert Highlight Video Here</p>
+            <p>
+                <iframe src="https://www.scorebat.com/embed/" frameborder="0" width="600" height="760" allowfullscreen
+                    allow='autoplay; fullscreen' style="width:600px;height:760px;overflow:hidden;display:block;"
+                    class="_scorebatEmbeddedPlayer_">
+                </iframe>
+            </p>
         </div>
 
     </div>
