@@ -24,13 +24,7 @@ window.onclick = function (event) {
   }
 }
 
-  // (function (d, s, id) {
-  //   var js, fjs = d.getElementsByTagName(s)[0];
-  //   if (d.getElementById(id)) return;
-  //   js = d.createElement(s);
-  //   js.id = id; js.src = 'https://www.scorebat.com/embed/embed.js?v=arrv';
-  //   fjs.parentNode.insertBefore(js, fjs);
-  // }(document, 'script', 'scorebat-jssdk'));
+
 
 // URL for scorebat video API
 var queryURL = "https://www.scorebat.com/video-api/v1/";
@@ -41,4 +35,14 @@ $.ajax({
   method: "GET"
 }).then(function (result) {
   console.log(result);
+  console.log(result[26].url);
+  var videoURL = (result[26].url);
+
+  var video = document.getElementById("video");
+  var source = document.createElement("source");
+
+  source.setAttribute('src', videoURL);
+
+  video.appendChild(source);
+
 });
