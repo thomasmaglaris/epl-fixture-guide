@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>EPL Fixture Guide</title>
     <link rel="stylesheet" type="text/css" href="highlights/highlights.css">
     <link rel="stylesheet" href="./style.css" />
@@ -64,6 +65,20 @@
         <h2>Weather</h2>
     </section>
 
+    <!-- CR: We might not need this. We could dynamically add ALL the fixtures into the above section instead of having multiple -->
+    <section id="upcomingFixture2"> <!-- CR: Renamed ID to avoid duplicating text on screen -->
+        <h2>Upcoming Fixture</h2>
+    </section>
+
+    <section id="weather">
+        <h2>Weather</h2>
+    </section>
+
+    <section id="table">
+        <h2>Table</h2>
+    </section>
+
+
 
    
 
@@ -73,12 +88,21 @@
         <!-- Modal content -->
         <div class="modal-content">
             <span class="close">&times;</span>
-            <p>Insert Highlight Video Here</p>
+            <p>
+                <iframe src="https://www.scorebat.com/embed/" frameborder="0" width="600" height="760" allowfullscreen
+                    allow='autoplay; fullscreen' style="width:600px;height:760px;overflow:hidden;display:block;"
+                    class="_scorebatEmbeddedPlayer_">
+                </iframe>
+            </p>
         </div>
 
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="fixtures/fixtures.js"></script>
     <script src="highlights/highlights.js"></script>
+    <script src="weather.js"></script>
 
 </body>
 
