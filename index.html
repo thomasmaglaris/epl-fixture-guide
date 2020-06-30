@@ -8,6 +8,7 @@
     <title>EPL Fixture Guide</title>
     <link rel="stylesheet" type="text/css" href="highlights/highlights.css">
     <link rel="stylesheet" href="./style.css" />
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 
 </head>
 
@@ -15,6 +16,7 @@
     <h1>English Premier League</h1>
     <h1>Fixture Guide</h1>
     <form action="drop-down"></form>
+
 
         <select id="dropdown"> <!-- CR: Added id for dropdown. Using this in fixtures.js to grab the Team ID value-->
             <option class="eplTeam" value="57">Arsenal</option>
@@ -55,6 +57,7 @@
 
     <!-- CR: We might not need this. We could dynamically add ALL the fixtures into the above section instead of having multiple -->
     <section id="upcomingFixture2"> <!-- CR: Renamed ID to avoid duplicating text on screen -->
+
         <h2>Upcoming Fixture</h2>
     </section>
 
@@ -77,12 +80,7 @@
         <!-- Modal content -->
         <div class="modal-content">
             <span class="close">&times;</span>
-            <p>
-                <iframe src="https://www.scorebat.com/embed/" frameborder="0" width="600" height="760" allowfullscreen
-                    allow='autoplay; fullscreen' style="width:600px;height:760px;overflow:hidden;display:block;"
-                    class="_scorebatEmbeddedPlayer_">
-                </iframe>
-            </p>
+            <div id="root"></div>
         </div>
 
     </div>
