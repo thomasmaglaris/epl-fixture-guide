@@ -10,50 +10,80 @@
     <link rel="stylesheet" href="./style.css" />
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.0/css/bulma-rtl.css">
+    <link href="https://fonts.googleapis.com/css2?family=Suez+One&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <h1>English Premier League</h1>
-    <h1>Fixture Guide</h1>
-    <form action="drop-down"></form>
+
+    <div id="header">
+        <h1 class="title is-1 has-text-light">English Premier League</h1>
+        <h1 class="title is-2 has-text-light">Fixture Guide</h1>
+        <div class="overlay"></div>
+    </div>
 
 
-        <select id="dropdown"> <!-- CR: Added id for dropdown. Using this in fixtures.js to grab the Team ID value-->
-            <option class="eplTeam" value="57">Arsenal</option>
-            <option class="eplTeam" value="58">Aston Villa</option>
-            <option class="eplTeam" value="1044">Bournemouth</option>
-            <option class="eplTeam" value="397">Brighton & Hove Albion</option>
-            <option class="eplTeam" value="328">Burnley</option>
-            <option class="eplTeam" value="61">Chelsea</option>
-            <option class="eplTeam" value="354">Crystal Palace</option>
-            <option class="eplTeam" value="62">Everton</option>
-            <option class="eplTeam" value="338">Leicester City</option>
-            <option class="eplTeam" value="64">Liverpool</option>
-            <option class="eplTeam" value="65">Manchester City</option>
-            <option class="eplTeam" value="66">Manchester United</option>
-            <option class="eplTeam" value="67">Newcastle United</option>
-            <option class="eplTeam" value="68">Norwich City</option>
-            <option class="eplTeam" value="356">Sheffield United</option>
-            <option class="eplTeam" value="340">Southampton</option>
-            <option class="eplTeam" value="73">Tottenham Hotspur</option>
-            <option class="eplTeam" value="346">Watford</option>
-            <option class="eplTeam" value="563">West Ham United</option>
-            <option class="eplTeam" value="76">Wolverhamption Wanderers</option>
+    <div class="teamSelection block">
+        <form action="drop-down"></form>
+        <select class="content is-medium">
+            <option disable selected hidden>Select your team</option>
+            <option class="content is-medium" value="57">Arsenal</option>
+            <option class="content is-medium" value="58">Aston Villa</option>
+            <option class="content is-medium" value="1044">Bournemouth</option>
+            <option class="content is-medium" value="397">Brighton & Hove Albion</option>
+            <option class="content is-medium" value="328">Burnley</option>
+            <option class="content is-medium" value="61">Chelsea</option>
+            <option class="content is-medium" value="354">Crystal Palace</option>
+            <option class="content is-medium" value="62">Everton</option>
+            <option class="content is-medium" value="338">Leicester City</option>
+            <option class="content is-medium" value="64">Liverpool</option>
+            <option class="content is-medium" value="65">Manchester City</option>
+            <option class="content is-medium" value="66">Manchester United</option>
+            <option class="content is-medium" value="67">Newcastle United</option>
+            <option class="content is-medium" value="68">Norwich City</option>
+            <option class="content is-medium" value="356">Sheffield United</option>
+            <option class="content is-medium" value="340">Southampton</option>
+            <option class="content is-medium" value="73">Tottenham Hotspur</option>
+            <option class="content is-medium" value="346">Watford</option>
+            <option class="content is-medium" value="563">West Ham United</option>
+            <option class="content is-medium" value="76">Wolverhamption Wanderers</option>
+
             <br><br>
-            <input type="Submit" id="Submit">
+            <input class="SubmitBtn button is-small is-info" type="Submit" id="Submit">
         </select>
+    </div>
 
-        <section id="upcomingFixture">
-            <h2>Upcoming Fixture</h2>
-        </section>
+    <div class="columns is-multiline" id="upcomingFixture">
+        <div class="column is-7">
+            <h2 class="title is-3 has-text-black-bis">Upcoming Fixtures</h2>
+            <!-- Trigger/Open The Modal -->
+            <button class="button is-medium is-info" id="myBtn">View Highlights</button>
+        </div>
+        <div class="column is-5" id="table">
+            <h2 class="title is-3 has-text-black-bis">Table</h2>
+        </div>
+    </div>
 
-        <section id="weather">
-            <h2>Weather</h2>
-        </section>
 
-        <section id="table">
-            <h2>Table</h2>
-        </section>
+    <section id="weather">
+        <h2>Weather</h2>
+    </section>
+
+    <!-- CR: We might not need this. We could dynamically add ALL the fixtures into the above section instead of having multiple -->
+    <section id="upcomingFixture2"> <!-- CR: Renamed ID to avoid duplicating text on screen -->
+        <h2>Upcoming Fixture</h2>
+    </section>
+
+
+    <section id="weather">
+        <h2>Weather</h2>
+    </section>
+
+
+    <section id="table">
+        <h2>Table</h2>
+    </section>
+
 
     <!-- CR: We might not need this. We could dynamically add ALL the fixtures into the above section instead of having multiple -->
     <section id="upcomingFixture2"> <!-- CR: Renamed ID to avoid duplicating text on screen -->
@@ -71,8 +101,7 @@
 
 
 
-    <!-- Trigger/Open The Modal -->
-    <button id="myBtn">View Highlights</button>
+   
 
     <!-- The Modal -->
     <div id="myModal" class="modal">
