@@ -23,9 +23,9 @@
     </div>
 
 
-    <div class="teamSelection block">
+    <div id = "dropMenu2" class="teamSelection block">
         <form action="drop-down"></form>
-        <select class="content is-medium">
+        <select id = "dropMenu" class="content is-medium">
             <option disable selected hidden>Select your team</option>
             <option class="content is-medium" value="57">Arsenal</option>
             <option class="content is-medium" value="58">Aston Villa</option>
@@ -86,7 +86,7 @@
 
 
     <!-- CR: We might not need this. We could dynamically add ALL the fixtures into the above section instead of having multiple -->
-    <section id="upcomingFixture2"> <!-- CR: Renamed ID to avoid duplicating text on screen -->
+    <section id="upcomingFixture"> <!-- CR: Renamed ID to avoid duplicating text on screen -->
 
         <h2>Upcoming Fixture</h2>
     </section>
@@ -116,12 +116,12 @@
 
     </div>
 
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="fixtures/fixtures.js"></script>
     <script src="highlights/highlights.js"></script>
-    <script src="weather.js"></script>
+    <!-- <script src="weather.js"></script> -->
 
 </body>
 
