@@ -8,9 +8,6 @@
     <link rel="stylesheet" type="text/css" href="highlights/highlights.css">
     <link rel="stylesheet" href="./style.css" />
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
-
-
-
 </head>
 
 <body>
@@ -18,8 +15,8 @@
     <h1>Fixture Guide</h1>
     <form action="drop-down"></form>
 
-
-    <select>
+    <select id="dropdown">
+        <!-- CR: Added id for dropdown. Using this in fixtures.js to grab the Team ID value-->
         <option class="eplTeam" value="57">Arsenal</option>
         <option class="eplTeam" value="58">Aston Villa</option>
         <option class="eplTeam" value="1044">Bournemouth</option>
@@ -56,8 +53,9 @@
         <h2>Table</h2>
     </section>
 
-
-    <section id="upcomingFixture">
+    <!-- CR: We might not need this. We could dynamically add ALL the fixtures into the above section instead of having multiple -->
+    <section id="upcomingFixture2">
+        <!-- CR: Renamed ID to avoid duplicating text on screen -->
         <h2>Upcoming Fixture</h2>
     </section>
 
@@ -76,9 +74,9 @@
 
     <!-- The Modal -->
     <div id="myModal" class="modal">
-        
+
         <!-- Modal content -->
-        <div id="modal-content" class="modal-content">
+        <div class="modal-content">
             <span class="close">&times;</span>
             <div id="root"></div>
         </div>
@@ -94,4 +92,3 @@
 </body>
 
 </html>
-
