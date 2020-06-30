@@ -8,12 +8,14 @@
     <title>EPL Fixture Guide</title>
     <link rel="stylesheet" type="text/css" href="highlights/highlights.css">
     <link rel="stylesheet" href="./style.css" />
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.0/css/bulma-rtl.css">
     <link href="https://fonts.googleapis.com/css2?family=Suez+One&display=swap" rel="stylesheet">
 </head>
 
 <body>
+
     <div id="header">
         <h1 class="title is-1 has-text-light">English Premier League</h1>
         <h1 class="title is-2 has-text-light">Fixture Guide</h1>
@@ -45,6 +47,7 @@
             <option class="content is-medium" value="346">Watford</option>
             <option class="content is-medium" value="563">West Ham United</option>
             <option class="content is-medium" value="76">Wolverhamption Wanderers</option>
+
             <br><br>
             <input class="SubmitBtn button is-small is-info" type="Submit" id="Submit">
         </select>
@@ -84,6 +87,7 @@
 
     <!-- CR: We might not need this. We could dynamically add ALL the fixtures into the above section instead of having multiple -->
     <section id="upcomingFixture2"> <!-- CR: Renamed ID to avoid duplicating text on screen -->
+
         <h2>Upcoming Fixture</h2>
     </section>
 
@@ -105,12 +109,7 @@
         <!-- Modal content -->
         <div class="modal-content">
             <span class="close">&times;</span>
-            <p>
-                <iframe src="https://www.scorebat.com/embed/" frameborder="0" width="600" height="760" allowfullscreen
-                    allow='autoplay; fullscreen' style="width:600px;height:760px;overflow:hidden;display:block;"
-                    class="_scorebatEmbeddedPlayer_">
-                </iframe>
-            </p>
+            <div id="root"></div>
         </div>
 
     </div>
