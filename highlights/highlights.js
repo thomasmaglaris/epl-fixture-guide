@@ -24,4 +24,21 @@ window.onclick = function (event) {
   }
 }
 
+// array videoID = ["oFWZB49Z0bk", "", "", etc.]
+// if team == Liverpool
+// i = 1
+// videoURL = ("http://www.youtube.com/embed/" + videoID(i) + "?enablejsapi=1&origin=http://example.com");
+
+var videoID = "oFWZB49Z0bk";
+        
+videoURL = ("http://www.youtube.com/embed/" + videoID + "?enablejsapi=1&origin=http://example.com");
+
+document.getElementById("player").src = videoURL;
+
+var tag = document.createElement('script');
+
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
 
