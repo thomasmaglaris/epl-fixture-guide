@@ -24,34 +24,21 @@ window.onclick = function (event) {
   }
 }
 
+// array videoID = ["oFWZB49Z0bk", "", "", etc.]
+// if team == Liverpool
+// i = 1
+// videoURL = ("http://www.youtube.com/embed/" + videoID(i) + "?enablejsapi=1&origin=http://example.com");
+
+var videoID = "oFWZB49Z0bk";
+        
+videoURL = ("http://www.youtube.com/embed/" + videoID + "?enablejsapi=1&origin=http://example.com");
+
+document.getElementById("player").src = videoURL;
+
+var tag = document.createElement('script');
+
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
 
-// // URL for scorebat video API
-// var queryURL = "https://cors-anywhere.herokuapp.com/https://www.scorebat.com/video-api/v1/";
-
-// // Get data from API using URL
-// $.ajax({
-//   url: queryURL,
-//   method: "GET"
-// }).then(function (result) {
-//   // console.log(result);
-//   // console.log(result[26].videos[0].embed);
-//   // var videoURL = result[26].videos[0].embed;
-//   html = $.parseHTML(result[26].videos[0].embed);
-//   console.log(html)
-//   console.log(html[0].find("iframe"))
-
-//   var video = $("#modal-content");
-
-  
-
-//   video.append(html.find("iframe"));
-
-// });
-
-
-  var root = $("#root");
-  var str = "<div style='width:100%;height:0px;position:relative;padding-bottom:calc(56.25% + 335px);' class='_scorebatEmbeddedPlayerW_'><iframe src='https:\/\/www.scorebat.com\/embed\/g\/824178\/?s=2' frameborder='0' width='560' height='650' allowfullscreen allow='autoplay; fullscreen' style='width:100%;height:100%;position:absolute;left:0px;top:0px;overflow:hidden;' class='_scorebatEmbeddedPlayer_'><\/iframe><\/div>";
-  var html = $.parseHTML(str);
-  // Append the parsed HTML
-  root.append(html);
