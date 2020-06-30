@@ -31,7 +31,7 @@ window.onclick = function (event) {
 
 var videoID = "oFWZB49Z0bk";
         
-videoURL = ("http://www.youtube.com/embed/" + videoID + "?enablejsapi=1&origin=http://example.com");
+videoURL = ("https://www.youtube.com/embed/" + videoID + "?enablejsapi=1&origin=http://example.com");
 
 document.getElementById("player").src = videoURL;
 
