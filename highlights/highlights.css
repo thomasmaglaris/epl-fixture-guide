@@ -35,3 +35,11 @@
     text-decoration: none;
     cursor: pointer;
   }
+
+  .button-hide {
+    display: none !important;
+  }
+
+  .button-show {
+    display: block;
+  }
