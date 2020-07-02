@@ -8,8 +8,6 @@ var btn = document.getElementById("myBtn");
 var span = document.getElementsByClassName("close")[0];
 
 
-
-
 // When the user clicks on the button, open the modal
 btn.onclick = function () {
   modal.style.display = "block";
@@ -19,6 +17,8 @@ btn.onclick = function () {
 span.onclick = function () {
   modal.style.display = "none";
 }
+
+
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function (event) {
@@ -106,4 +106,10 @@ $("#Submit").on("click", function () {
   tag.src = "https://www.youtube.com/iframe_api";
   var firstScriptTag = document.getElementsByTagName('script')[0];
   firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+  $(function () {
+    $('.close').click(function () {
+      $('iframe').attr('src', $('iframe').attr('src'));
+    });
+  });
 });
