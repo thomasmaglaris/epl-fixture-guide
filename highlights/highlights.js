@@ -9,6 +9,7 @@ var span = document.getElementsByClassName("close")[0];
 
 
 
+
 // When the user clicks on the button, open the modal
 btn.onclick = function () {
   modal.style.display = "block";
@@ -27,6 +28,11 @@ window.onclick = function (event) {
 }
 
 $("#Submit").on("click", function () {
+  var myBtn = $("#myBtn");
+  myBtn.removeClass("button-hide");
+  myBtn.addClass("button-show");
+
+
   var teamID = $("#dropMenu").val();
   console.log(teamID);
 
