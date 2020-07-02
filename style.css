@@ -44,10 +44,30 @@ h2 {
 
 #currentWeather {
     margin-bottom: 20px;
+    margin-right: 30px;
+    display: inline-block;
 }
 
 #forecastWeather {
     margin-bottom: 20px;
+    display: inline-block;
+}
+
+.homeTeam {
+    display: inline-block;
+    margin-right: 30px;
+    font-size: 24px;
+}
+
+.awayTeam {
+    display: inline-block;
+    font-size: 24px;
+}
+
+.vs {
+    display: inline-block;
+    margin-right: 30px;
+    font-size: 20px;
 }
 
 #fs-standings {
@@ -72,6 +92,3 @@ h2 {
         padding-top: 35px;
     }
 }
-
-
-   

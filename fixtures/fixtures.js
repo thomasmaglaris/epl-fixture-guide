@@ -6,6 +6,7 @@ const WEATHER_APIKEY = "d9d510d60f97d35c269584bef800f1b0"; // Open weather map A
 var teamID = "";
 var homeTeam = "";
 var teamCity = "";
+var homeTeamCity = "";
 var homeTeamLat = "";
 var homeTeamLon = "";
 var gbFormattedFixtureDate = "";
@@ -33,17 +34,25 @@ $("#Submit").on("click", function () {
         for (var i = 0; i < 1; i++) {
 
             // creates a div to hold the fixture
-            var fixtureDiv = $("<div>");
+            var fixtureDiv = $("<div>");   
 
             // Home Team
             homeTeam = $("<h4>");
-            homeTeam.text("Home: " + fixtures.matches[i].homeTeam.name);
+            homeTeam.text("(H) " + fixtures.matches[i].homeTeam.name);
+
+            var vs = $("<h6>");
+            vs.text("vs");
+            vs.attr("class", "vs");
+
             // Sets the ID of the home team to it's index (we use this in the Open Weather API call)
             homeTeam.attr("id", i);
+            homeTeam.attr("class", "homeTeam")
+            
 
             // Away Team
             awayTeam = $("<h4>");
-            awayTeam.text("Away: " + fixtures.matches[i].awayTeam.name);
+            awayTeam.text("(A) " + fixtures.matches[i].awayTeam.name);
+            awayTeam.attr("class", "awayTeam")
 
             // Gets fixture date in UTC and changes it to user's local time
             var rawDate = fixtures.matches[i].utcDate;
@@ -54,7 +63,7 @@ $("#Submit").on("click", function () {
             userMatchDate = $("<h6>");
             userMatchDate.text("Date: " + userFormattedFixtureDate.toString() + " (user's local time)"); 
 
-            fixtureDiv.append(userMatchDate, homeTeam, awayTeam);
+            fixtureDiv.append(userMatchDate, homeTeam, vs, awayTeam);
             fixtureDiv.attr("id", "fixtureDiv") // use this to style the div
             $("#displayFixture").append(fixtureDiv); // appends the div to the page
 
@@ -76,7 +85,7 @@ $("#Submit").on("click", function (event) {
         // Finds the home team name
         var home = $("#0").text();
         // Takes the first word from the home team name
-        var homeTeam = home.slice(6).split(" ");
+        var homeTeam = home.slice(4).split(" ");
         var homeTeamName = homeTeam[0];
 
         // Checks the home team name and sets the variable to the city associated with that home team
@@ -244,7 +253,7 @@ $("#Submit").on("click", function (event) {
                 // Matchday heading
                 var matchdayHeading = $("<h5>");
                 fhomeTeamCityName = homeTeamCity.replace(",gb", "");
-                matchdayHeading.text("Matchday Weather in " + fhomeTeamCityName + " (" + gbFormattedFixtureDate + ")");
+                matchdayHeading.text("Matchday Weather in " + fhomeTeamCityName);
 
                 // Gets the icon
                 var icon = $("<img>");
