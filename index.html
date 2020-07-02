@@ -17,73 +17,78 @@
 <body>
 
     <div id="header">
-        <h1 class="title is-1 has-text-light">English Premier League</h1>
-        <h1 class="title is-2 has-text-light">Fixture Guide</h1>
+        <h1 class="title is-1 is-size-4-mobile has-text-light">English Premier League</h1>
+        <h1 class="title is-2 is-size-5-mobile has-text-light">Fixture Guide</h1>
         <div class="overlay"></div>
     </div>
 
 
-    <div id = "dropMenu2" class="teamSelection block">
+    <div id="dropMenu2" class="teamSelection block">
         <form action="drop-down"></form>
-        <select id = "dropMenu" class="content is-medium">
+        <select id="dropMenu" class="content is-medium">
             <option disable selected hidden>Select your team</option>
-            <option class="content is-medium" value="57">Arsenal</option>
-            <option class="content is-medium" value="58">Aston Villa</option>
-            <option class="content is-medium" value="1044">Bournemouth</option>
-            <option class="content is-medium" value="397">Brighton & Hove Albion</option>
-            <option class="content is-medium" value="328">Burnley</option>
-            <option class="content is-medium" value="61">Chelsea</option>
-            <option class="content is-medium" value="354">Crystal Palace</option>
-            <option class="content is-medium" value="62">Everton</option>
-            <option class="content is-medium" value="338">Leicester City</option>
-            <option class="content is-medium" value="64">Liverpool</option>
-            <option class="content is-medium" value="65">Manchester City</option>
-            <option class="content is-medium" value="66">Manchester United</option>
-            <option class="content is-medium" value="67">Newcastle United</option>
-            <option class="content is-medium" value="68">Norwich City</option>
-            <option class="content is-medium" value="356">Sheffield United</option>
-            <option class="content is-medium" value="340">Southampton</option>
-            <option class="content is-medium" value="73">Tottenham Hotspur</option>
-            <option class="content is-medium" value="346">Watford</option>
-            <option class="content is-medium" value="563">West Ham United</option>
-            <option class="content is-medium" value="76">Wolverhamption Wanderers</option>
+            <option class="content is-medium is-size-7-mobile" value="57">Arsenal</option>
+            <option class="content is-medium is-size-7-mobile" value="58">Aston Villa</option>
+            <option class="content is-medium is-size-7-mobile" value="1044">Bournemouth</option>
+            <option class="content is-medium is-size-7-mobile" value="397">Brighton & Hove Albion</option>
+            <option class="content is-medium is-size-7-mobile" value="328">Burnley</option>
+            <option class="content is-medium is-size-7-mobile" value="61">Chelsea</option>
+            <option class="content is-medium is-size-7-mobile" value="354">Crystal Palace</option>
+            <option class="content is-medium is-size-7-mobile" value="62">Everton</option>
+            <option class="content is-medium is-size-7-mobile" value="338">Leicester City</option>
+            <option class="content is-medium is-size-7-mobile" value="64">Liverpool</option>
+            <option class="content is-medium is-size-7-mobile" value="65">Manchester City</option>
+            <option class="content is-medium is-size-7-mobile" value="66">Manchester United</option>
+            <option class="content is-medium is-size-7-mobile" value="67">Newcastle United</option>
+            <option class="content is-medium is-size-7-mobile" value="68">Norwich City</option>
+            <option class="content is-medium is-size-7-mobile" value="356">Sheffield United</option>
+            <option class="content is-medium is-size-7-mobile" value="340">Southampton</option>
+            <option class="content is-medium is-size-7-mobile" value="73">Tottenham Hotspur</option>
+            <option class="content is-medium is-size-7-mobile" value="346">Watford</option>
+            <option class="content is-medium is-size-7-mobile" value="563">West Ham United</option>
+            <option class="content is-medium is-size-7-mobile" value="76">Wolverhamption Wanderers</option>
 
             <br><br>
             <input class="SubmitBtn button is-small is-info" type="Submit" id="Submit">
         </select>
     </div>
 
-    <div class="columns is-multiline" id="upcomingFixture">
-        <div class="column is-7">
-            <h2 class="title is-3 has-text-black-bis">Upcoming Fixtures</h2>
+
+
+    <div class="columns" id="upcomingFixture">
+        <div class="column">
+            <h2 class="title is-3 has-text-black-bis">Upcoming Fixture</h2>
             <div id="displayFixture"></div>
             <div id="displayWeather"></div>
             <!-- Trigger/Open The Modal -->
             <button class="button is-medium is-info button-hide" id="myBtn">View Highlights</button>
         </div>
-        <div class="column is-5" id="table">
+        <div class="column" id="table">
             <h2 class="title is-3 has-text-black-bis">Table</h2>
+            <div id="fs-standings"></div> <script> (function (w,d,s,o,f,js,fjs) { w['fsStandingsEmbed']=o;w[o] = w[o] || function () { (w[o].q = w[o].q || []).push(arguments) }; js = d.createElement(s), fjs = d.getElementsByTagName(s)[0]; js.id = o; js.src = f; js.async = 1; fjs.parentNode.insertBefore(js, fjs); }(window, document, 'script', 'mw', 'https://cdn.footystats.org/embeds/standings.js')); mw('params', { leagueID: 2012 }); </script>
         </div>
     </div>
-    
-    <!-- The Modal -->
-    <div id="myModal" class="modal">
 
-        <!-- Modal content -->
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <iframe id="player" type="text/html" width="640" height="390" frameborder="0"></iframe>
-            
+ 
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <iframe id="player" type="text/html" width="640" height="390" frameborder="0"></iframe>
+
+
+            </div>
 
         </div>
 
-    </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="fixtures/fixtures.js"></script>
-    <script src="highlights/highlights.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="fixtures/fixtures.js"></script>
+        <script src="highlights/highlights.js"></script>
 
 </body>
 
