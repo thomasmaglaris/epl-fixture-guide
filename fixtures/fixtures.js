@@ -253,7 +253,7 @@ $("#Submit").on("click", function (event) {
                 // Matchday heading
                 var matchdayHeading = $("<h5>");
                 fhomeTeamCityName = homeTeamCity.replace(",gb", "");
-                matchdayHeading.text("Matchday Weather in " + fhomeTeamCityName + " (" + gbFormattedFixtureDate + ")");
+                matchdayHeading.text("Matchday Weather in " + fhomeTeamCityName);
 
                 // Gets the icon
                 var icon = $("<img>");
