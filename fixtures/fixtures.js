@@ -17,7 +17,6 @@ $("#Submit").on("click", function () {
 
     var queryURLByID = "https://cors-anywhere.herokuapp.com/https://api.football-data.org/v2/teams/" + teamID + "/matches?status=SCHEDULED"; // use to get scheduled matches from team id
     // var queryURLTeams = "https://cors-anywhere.herokuapp.com/https://api.football-data.org/v2/competitions/PL/teams"; // use to get a list of teams, to find team id's
-    console.log(queryURLByID);
 
     $.ajax({
         headers: { 'X-Auth-Token': '31c88a22681c400c82675891090ba891' },
@@ -27,8 +26,6 @@ $("#Submit").on("click", function () {
 
         // Clears last fixtures on new search
         $("#displayFixture").empty();
-
-        console.log(fixtures);
 
         // Use of for loop in case we want to add support for more than one fixture in the future
         for (var i = 0; i < 1; i++) {
@@ -176,8 +173,6 @@ $("#Submit").on("click", function (event) {
                 method: "GET"
             }).then(function (currentWeather) {
 
-                console.log(currentWeather);
-
                 // creates a div to hold the current weather data
                 var currentDiv = $("<div>");
 
@@ -190,14 +185,17 @@ $("#Submit").on("click", function (event) {
                 var weatherUrl = "http://openweathermap.org/img/wn/" + weatherIconNum + ".png"; //@2x.
                 var weatherIconDisplay = $("<img>")
                 weatherIconDisplay.attr("src", weatherUrl);
+                weatherIconDisplay.attr("class", "iconImg");
 
                 // temperature
                 var temp = $("<p>");
                 temp.text("Temperature: " + Math.round(currentWeather.main.temp - 273.15) + "°C");
+                temp.attr("class", "weatherData");
 
                 // humidity
                 var humidity = $("<p>");
                 humidity.text("Humidity: " + currentWeather.main.humidity + "%");
+                humidity.attr("class", "weatherData");
 
                 // appends weather info to the div
                 currentDiv.append(cityName, weatherIconDisplay, temp, humidity);
@@ -213,7 +211,6 @@ $("#Submit").on("click", function (event) {
                 method: "GET"
             }).then(function (futureWeather) {
 
-                console.log(futureWeather);
                 // resets array to blank
                 formattedDateList = [];
 
@@ -228,24 +225,18 @@ $("#Submit").on("click", function (event) {
                     formattedDateList.push(formattedDate);
                 }
 
-                console.log(gbFormattedFixtureDate); // date to compare
-                console.log(formattedDateList); // list of dates to compare to
-
                 // checks if the match date is within the next 8 days
                 if (formattedDateList.includes(gbFormattedFixtureDate)) {
-                    console.log("true");
+
                     // finds where the date of the fixture matches inside the list of formatted dates
                     index = formattedDateList.findIndex(str => gbFormattedFixtureDate.includes(str));
                 }
                 // if the match date is not within the next 8 days
                 else {
-                    console.log("false");
                     // sets index to 0, this will display tomorrows weather 
                     // (this is a temporary fix to avoid the code breaking when a team's next fixture is more than 8 days away)
                     index = 0;
                 }    
-
-                console.log(index); // check to see if it matches
 
                 // New div for match forecast
                 var forecastDiv = $("<div>");
@@ -260,20 +251,25 @@ $("#Submit").on("click", function (event) {
                 var iconCode = futureWeather.daily[index].weather[0].icon;
                 var iconURL = "https://openweathermap.org/img/w/" + iconCode + ".png";
                 icon.attr("src", iconURL);
+                icon.attr("class", "iconImg")
 
                 // Gets the temperature
                 var temp = $("<p>");
                 // No conversion needed, as units=metric was added to futureWeatherQuery URL
                 temp.text("Temperature: " + futureWeather.daily[index].temp.day + "°C");
+                temp.attr("class", "weatherData");
 
                 // Gets the humidity
                 var humidity = $("<p>");
                 humidity.text("Humidity: " + futureWeather.daily[index].humidity + "%");
+                humidity.attr("class", "weatherData");
 
                 // Appends the data to the div
                 forecastDiv.append(matchdayHeading, icon, temp, humidity);
                 forecastDiv.attr("id", "forecastWeather"); // can use this to style
-                $("#displayWeather").append(forecastDiv); // apends div to the page
+                setTimeout(function () {
+                    $("#displayWeather").append(forecastDiv); // apends div to the page
+                }, 200); // waits .2 of a second before displaying forecast data, this is to ensure forecast data comes after the current weather data
 
             });
         }
@@ -282,7 +278,7 @@ $("#Submit").on("click", function (event) {
         callWeather(weartherQuery);
         callFutureWeather(futureWeatherQuery);
 
-    }, 3000);
+    }, 2000);
 });
 
 // clear weather result

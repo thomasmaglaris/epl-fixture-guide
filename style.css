@@ -1,3 +1,7 @@
+* {
+    font-family: 'Suez One', serif;
+}
+
 body {
     background: linear-gradient(to bottom, #009933 -18%, #ffffff 100%);    
 }
@@ -38,12 +42,30 @@ h2 {
     text-align: center;
 }
 
+.SubmitBtn {
+    margin-left: 10px;
+    font-size: 16px !important;
+}
+
+.SubmitBtn:hover {
+    cursor: pointer;
+}
+
+#dropMenu {
+    border-radius: 4px;
+    height: 40px;
+}
+
+#upcomingFixture {
+    margin-bottom: 40px;
+}
+
 #fixtureDiv {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 #currentWeather {
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     margin-right: 30px;
     display: inline-block;
 }
@@ -70,10 +92,19 @@ h2 {
     font-size: 20px;
 }
 
+.weatherData {
+    font-size: 18px;
+}
+
+.iconImg {
+    margin-bottom: -5px;
+}
+
 #fs-standings {
     padding-left: 25px;
     padding-right: 25px;
 }
+
 
 @media screen and (max-width: 768px) {
     #header {   
