@@ -87,3 +87,20 @@ h2 {
 #forecastWeather {
     margin-bottom: 20px;
 }
+
+.homeTeam {
+    display: inline-block;
+    margin-right: 30px;
+    font-size: 24px;
+}
+
+.awayTeam {
+    display: inline-block;
+    font-size: 24px;
+}
+
+.vs {
+    display: inline-block;
+    margin-right: 30px;
+    font-size: 20px;
+}
