@@ -56,7 +56,7 @@ $("#Submit").on("click", function () {
             rawDate.toString();
             date = rawDate.replace("T", " ").replace("Z", " UTC");
             var userFixtureDate = new Date(date);
-            var userFormattedFixtureDate = moment(userFixtureDate).format('MMMM Do YYYY, h:mm:ss a');
+            var userFormattedFixtureDate = moment(userFixtureDate).format('MMMM Do YYYY, h:mm a');
             userMatchDate = $("<h6>");
             userMatchDate.text("Date: " + userFormattedFixtureDate.toString() + " (user's local time)"); 
 
@@ -162,7 +162,7 @@ $("#Submit").on("click", function (event) {
         }
 
         // queryURL for current weather data using city name as search parameter
-        var weartherQuery = "https://api.openweathermap.org/data/2.5/weather?q=" + homeTeamCity + "&appid=" + WEATHER_APIKEY;
+        var weartherQuery = "http://api.openweathermap.org/data/2.5/weather?q=" + homeTeamCity + "&appid=" + WEATHER_APIKEY;
         // queryURL for future daily forecast weather data using latitude and longitude as search parameters
         var futureWeatherQuery = "https://api.openweathermap.org/data/2.5/onecall?lat=" + homeTeamLat + "&lon=" + homeTeamLon + "&exclude=minutely,hourly,&appid=" + WEATHER_APIKEY + "&units=metric";
 
@@ -278,7 +278,7 @@ $("#Submit").on("click", function (event) {
         callWeather(weartherQuery);
         callFutureWeather(futureWeatherQuery);
 
-    }, 3000);
+    }, 2000);
 });
 
 // clear weather result
